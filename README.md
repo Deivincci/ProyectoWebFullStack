@@ -20,13 +20,12 @@ Bienvenidos a mi página web desarrollada con tecnologías web modernas. Este pr
 
 Para una experiencia óptima, te recomiendo visitar la página en su versión en vivo:
 
-![Página Web](https://github.com/Deivincci/ProyectoWebFullStack/blob/main/web.png?raw=true)
-
 **¡No olvides interactuar con el carrusel de videos y ver cómo las partículas se mueven!**
 
 ## Capturas de pantalla
 
-(Agrega aquí algunas capturas de pantalla representativas de tu página web si las tienes)
+![Página Web](https://github.com/Deivincci/ProyectoWebFullStack/blob/main/web.png?raw=true)
+
 
 ## Licencia
 
