@@ -20,7 +20,7 @@ Bienvenidos a mi página web desarrollada con tecnologías web modernas. Este pr
 
 Para una experiencia óptima, te recomiendo visitar la página en su versión en vivo:
 
-[Visitar la página web](https://esco60.42web.io/)
+![Página Web](https://github.com/Deivincci/ProyectoWebFullStack/blob/main/web.png?raw=true)
 
 **¡No olvides interactuar con el carrusel de videos y ver cómo las partículas se mueven!**
 
@@ -35,3 +35,8 @@ Este proyecto está bajo la licencia [**CC BY-NC 4.0**](https://creativecommons.
 ---
 
 ¡Espero que disfrutes de la página! Si tienes alguna duda o sugerencia, no dudes en ponerte en contacto conmigo.
+
+## Nota del Autor
+
+Estoy aplicando nuevas tecnologías y animaciones de manera continua, ya que me gusta explorar las posibilidades que ofrecen. Si encuentras algo fuera de lugar o algún pequeño error, te ruego me disculpes. Estoy trabajando constantemente en la web, por lo que puedes contar con que cualquier inconveniente será resuelto en un breve plazo de tiempo.
+
