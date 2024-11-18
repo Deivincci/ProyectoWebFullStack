@@ -1,0 +1,270 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url('../img/fondo.png') no-repeat center center;
+    background-size: cover;
+    position: relative; /* Asegura que las partículas estén detrás del contenido */
+    z-index: 1; /* Coloca el contenido por encima de las partículas */
+}
+
+/* Eliminamos grid-template-areas y ajustamos la disposición con grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas */
+    grid-template-rows: auto auto auto auto 1fr auto; /* Filas ajustadas */
+    min-height: 100vh;
+    z-index: 1; /* Aseguramos que el contenido quede sobre las partículas */
+}
+
+header {
+    grid-column: span 6; /* Ocupa toda la fila */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+header .logo {
+    margin-left: -10px;
+    margin-top: -21px;
+    height: auto;
+    width: auto;
+}
+
+header .invader {
+    grid-column: span 1;
+    height: 80px;
+    width: auto;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+/* Ajuste en el diseño de los botones y demás secciones */
+.botones-container {
+    grid-column: span 6;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px;
+    position: relative;
+    z-index: 2; /* Asegura que los botones estén sobre las partículas */
+}
+
+.botones-container button {
+    min-width: 80px;
+    max-width: 200px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    color: rgb(255, 215, 0); /* Color amarillo original */
+    border-radius: 8px;
+    margin: 8px;
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, text-shadow 0.3s ease;
+    z-index: 3;
+}
+
+/* Efecto en hover: agrega un fondo azul neón, resalta el borde y aumenta el tamaño */
+.botones-container button:hover {
+    transform: scale(1.1); /* Escala el botón al pasar el cursor */
+    background: linear-gradient(45deg, rgba(0, 136, 255, 0.8), rgba(0, 255, 255, 0.8)); /* Fondo con gradiente azul y cyan */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 136, 255, 1); /* Efecto neón azul */
+    border-color: rgba(0, 136, 255, 0.7); /* Borde neón azul */
+    color: rgb(255, 215, 0); /* El texto sigue siendo amarillo */
+    animation: pulse 1.5s infinite alternate; /* Efecto de pulsación */
+    text-shadow: 
+        0 0 5px #000,  /* Contorno negro */
+        0 0 10px #000, 
+        0 0 15px #000,
+        0 0 20px #00ff00, /* Sombra verde neón */
+        0 0 30px #00ff00, 
+        0 0 40px #00ff00, 
+        0 0 50px #00ff00, 
+        0 0 75px #00ff00; /* Resplandor verde neón */
+}
+
+/* Animación de pulsación */
+@keyframes pulse {
+    0% {
+        transform: scale(1.1); /* Aumento del tamaño al inicio */
+    }
+    50% {
+        transform: scale(1.15); /* Aumento más grande en la mitad del ciclo */
+    }
+    100% {
+        transform: scale(1.1); /* Vuelve al tamaño inicial */
+    }
+}
+
+.noticias {
+    grid-column: span 6;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 2em;  /* Doble de grande */
+}
+
+.noticias .noticia-titulo {
+    font-weight: bold;
+    margin: 0;
+    font-size: 2em;  /* Aumentamos aún más el tamaño de la fuente para el título */
+}
+
+.leyenda {
+    grid-column: span 6;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+
+/* Estilo base del carrusel */
+#carrusel {
+    margin-left: 420px;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite linear;
+    display: flex; /* Usamos flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    z-index: 2; /* Asegura que esté sobre las partículas */
+}
+
+/* Elementos individuales dentro del carrusel */
+.elemento-carrusel {
+    position: absolute;
+    width: 560px;  /* El tamaño del video */
+    height: 315px; /* Ajustado para el aspecto de los vídeos */
+    transform-origin: center center;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustar el tamaño y aplicar efecto de zoom al iframe */
+.elemento-carrusel iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Eliminar bordes si los hay */
+}
+
+
+.quote-container {
+    grid-column: span 6; /* Asegura que ocupe toda la fila */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 273px;
+    width: 500px;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.quote-container h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.quote-container p {
+    font-style: italic;
+    text-align: center;
+}
+
+footer {
+    grid-column: span 6; /* Asegura que ocupe toda la fila */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+#particles-js {
+    position: fixed;  /* Asegura que las partículas cubran toda la pantalla sin moverse */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Coloca las partículas detrás del contenido */
+}
+
+/* Media Queries */
+@media all and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .botones-container {
+        gap: 4px;
+        padding: 5px;
+    }
+
+    .botones-container button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una sola columna */
+    }
+
+    .botones-container {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .botones-container button {
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+}
+
+@media (forced-colors: active) {
+    body {
+        background-color: Canvas;
+        color: CanvasText;
+    }
+
+    .grid-container {
+        border-color: Canvas;
+    }
+
+    header, footer, .botones-container {
+        color: CanvasText;
+    }
+
+    .botones-container button {
+        background: Canvas;
+        color: CanvasText;
+        box-shadow: none;
+    }
+}
